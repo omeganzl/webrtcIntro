@@ -65,7 +65,7 @@ socket.on('log', function (array) {
 //handle message message 
 socket.on('message', function(message) {
 	console.log('Got message from other peer :' + message);
-	div.insertAdjacentHTML('beforeEnd', '<p style="color:blue">Time: ' + (performance.now() / 1000).toFixed(3) + ' --> Got message from other peer: ' + msg + '</p>');
+	div.insertAdjacentHTML('beforeEnd', '<p style="color:blue">Time: ' + (performance.now() / 1000).toFixed(3) + ' --> Got message from other peer: ' + message + '</p>');
 	//send back response message:
 	//1. get response from user
 	var myResponse = prompt('Send response to other peer', "");
@@ -79,7 +79,7 @@ socket.on('message', function(message) {
 //Handle 'response message'
 socket.on('response', function (response){
 	console.log('Got response from other peer: ' + response);
-	div.insertAdjacentHTML('beforeEnd', '<p style="color:blue">Time: ' + (performance.now() / 1000).toFixed(3) + ' --> Got response from other peer: ' + msg + '</p>');
+	div.insertAdjacentHTML('beforeEnd', '<p style="color:blue">Time: ' + (performance.now() / 1000).toFixed(3) + ' --> Got response from other peer: ' + response + '</p>');
 	//Keep on chatting
 	var chatMessage = prompt('Keep on chatting. Write "Bye" to quit conversation', "");
 	//user wants to quit conversation: send 'Bye' to remote party
